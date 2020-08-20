@@ -1,0 +1,9 @@
+RS2ApplyNumber=1,2,3,4,5,6,7,8,9
+RS2TestStage=Primary Antenna,Primary Antenna,Primary Antenna,Primary Antenna,Secondary Antenna,Secondary Antenna,Secondary Antenna,Secondary Antenna,Third Antenna
+
+RS2FSEIS=FSEIS_1,FSEIS_2,FSEIS_3,FSEIS_4,FSEIS_5,FSEIS_6,FSEIS_7,FSEIS_8,9
+RS2BHHREIS=BHHREIS_1,BHHREIS_2,BHHREIS_3,BHHREIS_4,BHHREIS_5,BHHREIS_6,BHHREIS_7,BHHREIS_8,9
+RS2Channel=Channel_1,Channel_2,Channel_3,Channel_4,Channel_5,Channel_6,Channel_7,Channel_8,9
+RS2Fequence=Fequence_1,Fequence_2,Fequence_3,Fequence_4,Fequence_5,Fequence_6,Fequence_7,Fequence_8,9
+RS2Band=band_1,band_2,band_3,band_4,band_5,band_6,band_7,band_8,9
+RS2Bandwidth=Bandwidth_1,Bandwidth_2,Bandwidth_3,Bandwidth_4,Bandwidth_5,Bandwidth_6,Bandwidth_7,Bandwidth_8,9

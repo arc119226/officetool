@@ -1,0 +1,6 @@
+PE1ApplyNumber=111,222,333
+PE1PhotoDescip=aaa,bbb,ccc
+PE1PhotofileName=google.png,google.png,google.png
+PE1PhotoData=./resource/google.png,./resource/google.png,./resource/google.png
+PE1ProductName=name0,name1,name2
+PE1PhotoTag=tag0,tag1,tag2

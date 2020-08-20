@@ -1,0 +1,16 @@
+vAFH_ApplicantName=申請人名
+vAFH_MaufactureName=廠家名
+vAFH_ModelName=型號名稱
+vAFH_ProductName=產品名稱
+#MULTI_ROW
+vRVH_TABLE=
+vRVH_ReportNumber=1,2,3,4,5
+vRVH_Revision=1.0.0.1,1.0.0.2,1.0.0.3,1114,1115
+vRVH_Date=20180813,20180814,20180815,20180816,20180817
+vRVH_Memo=memo1,memo2,memo3,memo4,memo5
+PE2_IMGTABLE=
+PE2PhotoTag=tag0,tag1,tag2,tag3,tag4,tag5,tag6,tag7,tag8
+PE2PhotoData=./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png
+PE1_IMGTABLE=
+PE1PhotoTag=tag0,tag1,tag2,tag3,tag4,tag5,tag6,tag7,tag8
+PE1PhotoData=./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png,./resource/google.png

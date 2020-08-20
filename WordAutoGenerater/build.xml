@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="full_prod" name="ArcareReporterApi"><!--project name-->
+	<property name="package.name" value="ArcareReporterApi-1.0"/>
+	<property name="src.dir" value="src"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="config.dir" value="config"/>
+	<property name="resource.dir" value="resource"/>
+	<property name="classes.dir" value="classes"/>
+	<property name="temp.output.dor" value="output"/>
+    <property name="output.dir" value="dest"/>
+	<property name="run.bat" value="run.bat"/>
+	<property name="jdk.version" value="1.8"/>
+	<property name="ant.build.javac.source" value="${jdk.version}"/>
+	<property name="ant.build.javac.target" value="${jdk.version}"/>
+    <property name="jarname" value="${package.name}.jar"/>
+	<property name="jarname.all" value="${package.name}-all.jar"/>
+    <property name="mainclass" value="com.arcare.document.reporter.test.TestCase"/><!--no main-->
+	
+    <!-- lib path -->
+    <path id="lib-classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+    <path id="testlib-classpath">
+        <fileset dir="${test.lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+	
+	<target name="clean" description="clean up" >
+	    <!-- Delete the output directory trees -->
+	    <delete dir="${classes.dir}"/>
+		<delete dir="${output.dir}"/>
+		<delete dir="${temp.output.dor}"/>
+	</target>
+	
+    <!-- 1.init create output dir -->
+    <target name="init" depends="clean">
+        <mkdir dir="${classes.dir}"/>
+        <mkdir dir="${output.dir}"/>
+    </target>
+    <!-- 2.compile -->
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false" encoding="UTF-8">
+        	<classpath refid="lib-classpath"/>
+        </javac>
+    </target>
+
+	<!-- build -->
+	<target name="build" depends="compile">
+        <copy todir="${output.dir}/${lib.dir}">
+            <fileset dir="${lib.dir}"/>
+        </copy>
+    	<copy todir="${output.dir}/${resource.dir}">
+    	    <fileset dir="${resource.dir}"/>
+    	</copy>
+    	<copy todir="${output.dir}">
+    		<fileset file="${run.bat}"/>
+    	</copy>
+        <!--Create a property containing all .jar files,
+        prefix lib/, and seperated with a space-->
+        <pathconvert property="mf.classpath" pathsep=" ">
+            <mapper>
+                <chainedmapper>
+                    <!-- jar remove dir -->
+                    <flattenmapper/>
+                    <!-- add lib/ prefix -->
+                    <globmapper from="*" to="lib/*"/>
+                </chainedmapper>
+            </mapper>
+            <path refid="lib-classpath"/>
+         </pathconvert>
+        <!-- jar output path -->
+        <jar destfile="${output.dir}/${jarname}" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-class" value="${mainclass}"/>
+                <attribute name="Class-Path" value="${mf.classpath}"/>
+            </manifest>
+        </jar>
+	</target>
+	
+    <!-- package prod -->
+    <target name="full_prod" depends="build">
+    	<copy todir="${output.dir}/${config.dir}">
+    		<fileset dir="${config.dir}"/>
+    	</copy>
+    </target>
+</project>
